@@ -1,0 +1,12 @@
+{
+  "name": "Evolving towards cookbook reusability in Chef",
+  "description": "Evolving towards cookbook reusability in Chef",
+  "author": "Peter Donald",
+  "templates" : {
+      "special" : "simple.tpl"
+  },
+  "pause_msg": "Paused !!!",
+  "sections": [
+    {"section":"evolution"}
+  ]
+}
