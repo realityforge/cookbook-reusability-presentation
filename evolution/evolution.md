@@ -182,7 +182,8 @@
 
 	@@@ ruby
 	queues = []
-    search(:node, 'omq_dests_queues:*' + node.name) do |n|
+    search(:node, 'omq_dests_queues:* AND ' +
+                  'NOT name:' + node.name) do |n|
       queues.merge( n['omq']['dests']['queues'].to_hash )
     end
     queues.merge( node['omq']['dests']['queues'].to_hash )
@@ -224,7 +225,8 @@
 # Example #
 
 	@@@ ruby
-    search(:node, 'omq_dests_queues:*' + node.name) do |n|
+    search(:node, 'omq_dests_queues:* AND ' +
+                  'NOT name:' + node.name) do |n|
       n.to_hash.each_pair do |key, value|
         node.override['omq']['dests']['queues'][key] = value
       end
